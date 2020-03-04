@@ -9,14 +9,11 @@ class BurpExtender(IBurpExtender, IHttpListener):
 
     def registerExtenderCallbacks(self, callbacks):
 
-        print("Loading...")
-
         self.callbacks = callbacks
         self.helpers = callbacks.getHelpers()
         callbacks.setExtensionName("Request and Response Modifier")
         callbacks.registerHttpListener(self)
         print("Loaded Request and Response Modifier!")
-
         return
 
     def processHttpMessage(self, toolFlag, messageIsRequest, currentRequest):
