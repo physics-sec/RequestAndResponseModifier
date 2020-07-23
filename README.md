@@ -9,7 +9,10 @@ This type of extension is very useful when you want to manipulate the requests i
 
 ### How to use
 Just add your code in the `onRequest` and/or `onResponse` methods.  
-The  *request* and *response* parameters are strings.
+The  *request* and *response* parameters are strings.  
+**Be aware:**
+You will not see the modified version of the request on Burp's history.  
+Use the `print` function inside `onRequest` to get some visibility.
 
 ### Scope
 By default, the only requests that are affected are the ones in scope, if you want to modify all of them, set *onlyModifyInScopeDomains* to false:
